@@ -1,3 +1,6 @@
+# Leo stuff: nfs_ not for sharing
+nfs_*
+
 # Compiled class file
 *.class
 
