@@ -1,15 +1,28 @@
 public class TrainLine {
 
+    private static final String DEFAULT_NAME = "Hogwarts Express";
+
+    /** The name of the train line */
     private String name;
+    /** The head station of the train line */
     private Station head;
 
     /** Basic constructor */
     public TrainLine(String name) {
         this.name = name;
         this.head = null;
-    }
+    } // basic constructor
 
-    /** How to add a new station to this line */
+    /** Default constructor */
+    public TrainLine() {
+        this(DEFAULT_NAME);
+    } // default constructor
+
+    /**
+     * Adds a new station after the last station of a trainline.
+     * 
+     * @param name String with name of new station to create and add
+     */
     public void add(String name) {
         Station newStation = new Station(name);
         if (this.head == null) {
@@ -26,20 +39,27 @@ public class TrainLine {
             // Cursor is now at the last station of the line
             cursor.setNext(newStation);
         }
-    }
+    } // method add
+
+    /**
+     * String representation of the object
+     */
+    private static final String EMPTY_TRAIN_LINE = "The train line is empty";
+    private static final String TRAIN_LINE_HEADER = "\"%s\" has the following stations: %s\n";
+    private static final String NEXT_ARROW = "-->";
 
     public String toString() {
         if (this.head == null) {
-            return "The train line is empty";
+            return EMPTY_TRAIN_LINE;
         } else {
             // do something else, for example
-             String stations = "";
-             Station cursor = this.head;
-             while (cursor != null) {
-                stations = stations + "-->" + cursor.getName();
+            String stations = String.format(TRAIN_LINE_HEADER, this.name, this.head.getName());
+            Station cursor = this.head.getNext();
+            while (cursor != null) {
+                stations = stations + NEXT_ARROW + cursor.getName();
                 cursor = cursor.getNext();
-             }
-             return "The line has the following stations:\n" + stations;
+            }
+            return stations;
         }
-    }
-}
+    } // method toString
+} // class TrainLine
