@@ -3,7 +3,11 @@
  * written for String contents. Eventually it should be generalized for any kind
  * of contents.
  */
-public class Node {
+public class Node implements BasicGoodBehavior, Comparable<Node> {
+
+    public int compareTo(Node other) {
+        return this.value.length() - other.value.length();
+    }
 
     /** Default value for new nodes */
     private static final String DEFAULT_VALUE = "EDON";
@@ -49,6 +53,10 @@ public class Node {
     public String toString() {
         return "Node [value=" + value + "]";
     } // method toString
+
+    public boolean isEmpty() {
+        return this.value == null;
+    }
 
     /** Simple testing */
     public static void main(String[] args) {
