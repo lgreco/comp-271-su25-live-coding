@@ -5,8 +5,8 @@
  */
 public class Node implements BasicGoodBehavior, Comparable<Node> {
 
-    public int compareTo(Node other) {
-        return this.value.length() - other.value.length();
+    public int compareTo(Node node) {
+        return this.value.length() - node.value.length();
     }
 
     /** Default value for new nodes */
