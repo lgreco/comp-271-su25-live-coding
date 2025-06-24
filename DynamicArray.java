@@ -46,8 +46,50 @@ public class DynamicArray {
 
     public void add(String string) {
         // Is there room in the underlying array?
-        
+        if (this.occupancy == this.underlying.length) {
+            this.resize();
+        }
+        // At this point there is guaranteed room in the array, either
+        // because we just doubled it in size or because there was enough
+        // room for one more element to begin with.
+        this.underlying[this.occupancy] = string;
+        this.occupancy++;
+    } // method add
+
+    /**
+     * method to find the position of an element in the underlying array
+     * 
+     * @return -1 if string not present, otherwise underlying array position of
+     *         first occurrence of string.
+     */
+    public int indexOf(String string) {
+        return -1234;
+    } // method indexOf
+
+    /** Method to tell if a string exists in the underlying array */
+    public boolean contains(String string) {
+        return false;
     }
 
+    /** Method to count how many times a string appears in the underlying array*/
+    public int countOf(String string) {
+        return -1234;
+    }
+
+    /** method to remove items from the underlying array */
+    public String remove(int index) {
+        return "James on the street talking trash about your hotel";
+    }
+
+    /** overload remove */ 
+    public String remove(String string) {
+        return "James on the street talking trash about your hotel";
+    }
+
+    /** Complete this method */
+    public String toString() {
+        return "to be done shortly"; // blatant violation of magic values clause
+                                     // serves as reminder to finish this method
+    }
 
 } // class DynamicArray
