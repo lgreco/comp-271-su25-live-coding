@@ -12,8 +12,8 @@ public class DynamicArray<E> {
     private int occupancy;
 
     @SuppressWarnings("unchecked")
-    /** Basic constructor */ 
-    public DynamicArray (int size) {
+    /** Basic constructor */
+    public DynamicArray(int size) {
         // Guard statement here to ensure that the user-provided size is legit.
         if (size < 1) {
             size = DEFAULT_SIZE;
@@ -36,11 +36,13 @@ public class DynamicArray<E> {
     @SuppressWarnings("unchecked")
     private void resize() {
         // Create temporary array of desired size
-        E[] temp =  (E[]) new Object[2*this.underlying.length];
+        E[] temp = (E[]) new Object[2 * this.underlying.length];
         for (int i = 0; i < this.underlying.length; i++) {
             temp[i] = this.underlying[i];
         }
         this.underlying = temp;
     } // method resize
 
-}
+
+
+} // class DynamicArray
