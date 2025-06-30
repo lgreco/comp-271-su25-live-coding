@@ -8,6 +8,6 @@ public interface Lifo<E> {
      * 
      * @param e E object to enter to the underlying data structure.
      */
-    public void push(E e);
+    void push(E e);
 
 } // interface Lifo

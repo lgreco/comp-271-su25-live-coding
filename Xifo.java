@@ -7,7 +7,7 @@ public interface Xifo<E> {
      * @return E element at the front of the underlying data structure; if the data
      *         structure is empty, method returns null.
      */
-    public E peek();
+    E peek();
 
     /**
      * Remove and return the first item in the underlying data structure.
@@ -15,13 +15,13 @@ public interface Xifo<E> {
      * @return E item at the front of the underlying data structure. If empty,
      *         return null.
      */
-    public E pop();
+    E pop();
 
     /**
      * String representation for the implementing object
      * 
      * @return String with information about the implementing object
      */
-    public String toString();
+    String toString();
 
 } // interface Xifo
