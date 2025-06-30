@@ -27,7 +27,20 @@ public class Queue extends DynamicArray implements Comparable<Queue>, Xifo<Strin
 
     /*
      * WHAT ABOUT INTERFACE Fifo? HOW/WHERE IS IT IMPLEMENTED?
+     * 
+     * Interface Fifo requires the implementation of a method with header
+     * 
+     * void add(E e);
+     * 
+     * where E, here, is String.
+     * 
+     * Class Queue (this class) extends class DynamicArray. Class DynamicArray has
+     * an add method with header
+     * 
+     * add(String string)
+     * 
+     * This method fulfills the Fifo.add contract. There is no need for a separate
+     * add method in class Queue since we inherit one from DynamicArray.
      */
-
 
 } // class Queue
