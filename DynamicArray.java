@@ -109,6 +109,6 @@ public class DynamicArray {
         return "to be done shortly"; // blatant violation of magic values clause
                                      // serves as reminder to finish this method
                                      // HOMEWORK DUE 7/2
-    }
+    } // method toString
 
 } // class DynamicArray
