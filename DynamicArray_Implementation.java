@@ -1,7 +1,7 @@
-public class Generic_DynamicArray_Implementation {
+public class DynamicArray_Implementation {
     public static void main(String[] args) {
-        GenericDynamicArray <String> dynamicArray1 = new GenericDynamicArray<>();
-        nfs_DynamicArray<Integer> dynamicArray2 = new GenericDynamicArray<>();
+        DynamicArray<String> dynamicArray1 = new DynamicArray<>();
+        DynamicArray<Integer> dynamicArray2 = new DynamicArray<>();
         dynamicArray1.add("Hello");
         dynamicArray1.add("world");
         System.out.println(dynamicArray1);

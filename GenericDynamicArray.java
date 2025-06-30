@@ -2,7 +2,7 @@
  * Object adjusts the size of underlying array to accommodate any number of new
  * elements added to it. The class is written as generic.
  */
-public class GenericDynamicArray<E> {
+public class GenericDynamicArray<E extends Comparable<E>> implements Comparable<GenericDynamicArray<E>> {
 
     private static final int DEFAULT_SIZE = 4;
 
@@ -30,6 +30,10 @@ public class GenericDynamicArray<E> {
         this(DEFAULT_SIZE);
     } // default constructor
 
+    public int getOccupancy() {
+        return this.occupancy;
+    }
+
     /**
      * Resize the underlying array as needed.
      */
@@ -43,6 +47,15 @@ public class GenericDynamicArray<E> {
         this.underlying = temp;
     } // method resize
 
+    public void add(E e) {
+        if (this.occupancy == this.underlying.length) {
+            this.resize();
+        }
+        this.underlying[this.occupancy++] = e;
+    }
 
+    public int compareTo(GenericDynamicArray<E> other) {
+        return this.occupancy - other.getOccupancy();
+    }
 
 } // class DynamicArray
