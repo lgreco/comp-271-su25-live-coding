@@ -1,3 +1,4 @@
+package miscArchives;
 public interface BasicGoodBehavior {
 
     

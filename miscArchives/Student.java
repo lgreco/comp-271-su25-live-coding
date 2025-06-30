@@ -1,3 +1,4 @@
+package miscArchives;
 /**
  * A Student is a Person. So this class inherits its basic form and structure
  * from class Person. It differs from Person in that it has an additional

@@ -10,7 +10,9 @@ public interface Xifo<E> {
     E peek();
 
     /**
-     * Remove and return the first item in the underlying data structure.
+     * Remove and return the first item in the underlying data structure. We should
+     * ensure that the remainting items in the data structure are positioned so the
+     * next item in line becomes the first item for subsequent removal.
      * 
      * @return E item at the front of the underlying data structure. If empty,
      *         return null.

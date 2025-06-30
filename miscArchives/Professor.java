@@ -1,3 +1,4 @@
+package miscArchives;
 /**
  * Professor is also a person. How would you modify this class to take advantage
  * of the super-class Person?

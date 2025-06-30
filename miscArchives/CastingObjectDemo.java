@@ -1,3 +1,4 @@
+package miscArchives;
 public class CastingObjectDemo {
     public static void main(String[] args) {
         Object[] objects = new Object[2];

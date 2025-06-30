@@ -1,3 +1,4 @@
+package miscArchives;
 /**
  * A class to model a person as an object with a name, a birth year, and some
  * identification number. This could be a social securit number for a larger

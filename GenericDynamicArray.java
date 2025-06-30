@@ -35,6 +35,12 @@ public class GenericDynamicArray<E extends Comparable<E>> implements Comparable<
         return this.occupancy;
     } // method getOccupancy
 
+
+    /** Accessor for the first element of the underlying array */
+    public E getFirst() {
+        return this.underlying[0];
+    } // method getFirst
+
     /**
      * Resize the underlying array as needed.
      */

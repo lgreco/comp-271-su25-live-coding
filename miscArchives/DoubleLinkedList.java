@@ -1,3 +1,4 @@
+package miscArchives;
 public class DoubleLinkedList implements Comparable<DoubleLinkedList> {
 
     private static final String DEFAULT_NAME = "Whatever";

@@ -1,3 +1,4 @@
+package miscArchives;
 public class Station {
 
     /** Default station name */

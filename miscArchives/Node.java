@@ -1,3 +1,4 @@
+package miscArchives;
 /**
  * Standard node class for single and double-linked lists. The node here is
  * written for String contents. Eventually it should be generalized for any kind

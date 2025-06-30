@@ -1,3 +1,4 @@
+package miscArchives;
 public class TrainLine {
 
     private static final String DEFAULT_NAME = "Hogwarts Express";

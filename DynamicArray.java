@@ -30,6 +30,16 @@ public class DynamicArray {
         this(DEFAULT_SIZE);
     } // default constructor
 
+    /** Returns the first element of the underlying array. */
+    public String getFirst() {
+        return this.underlying[0];
+    } // method getFirst
+
+    /** Accessor for occupancy */
+    public int getOccupancy() {
+        return this.occupancy;
+    } // method getOccupancy
+
     /**
      * Resize the underlying array as needed.
      * 
@@ -63,33 +73,36 @@ public class DynamicArray {
      *         first occurrence of string.
      */
     public int indexOf(String string) {
-        return -1234;
+        return -1234; // HOMEWORK DUE 7/2
     } // method indexOf
 
     /** Method to tell if a string exists in the underlying array */
     public boolean contains(String string) {
-        return false;
+        return false; // HOMEWORK DUE 7/2
     }
 
-    /** Method to count how many times a string appears in the underlying array*/
+    /** Method to count how many times a string appears in the underlying array */
     public int countOf(String string) {
-        return -1234;
+        return -1234; // HOMEWORK DUE 7/2
     }
 
     /** method to remove items from the underlying array */
     public String remove(int index) {
         return "James on the street talking trash about your hotel";
+        // HOMEWORK DUE 7/2
     }
 
-    /** overload remove */ 
+    /** overload remove */
     public String remove(String string) {
         return "James on the street talking trash about your hotel";
+        // HOMEWORK DUE 7/2
     }
 
     /** Complete this method */
     public String toString() {
         return "to be done shortly"; // blatant violation of magic values clause
                                      // serves as reminder to finish this method
+                                     // HOMEWORK DUE 7/2
     }
 
 } // class DynamicArray
