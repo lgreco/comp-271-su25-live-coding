@@ -30,7 +30,13 @@ public class DynamicArray {
         this(DEFAULT_SIZE);
     } // default constructor
 
-    /** Returns the first element of the underlying array. */
+    /**
+     * Returns the first element of the underlying array. This method can be used by
+     * FIFO and LIFO extensions of this class, that require access to the first
+     * element of the underlying array. Since the underlying array here is private,
+     * it cannot be access directly from other classes, even those that extend this
+     * class. Therefore, we need an accessor for the first element of the array.
+     */
     public String getFirst() {
         return this.underlying[0];
     } // method getFirst
