@@ -1,6 +1,9 @@
-public class Stack<E extends Comparable<E>> extends GenericDynamicArray<E> implements Xifo<E>, Lifo<E> {
+public class Queue<E extends Comparable<E>> extends GenericDynamicArray<E> implements Xifo<E>, Fifo<E> {
 
-    public int compareTo(Stack<E> other) {
+    public void push(E e) {
+    }
+
+    public int compareTo(Queue<E> other) {
         return this.getOccupancy()-other.getOccupancy();
     }
 
@@ -14,9 +17,6 @@ public class Stack<E extends Comparable<E>> extends GenericDynamicArray<E> imple
 
     public String toString() {
         return null;
-    }
-
-    public void push(E e) {
     }
 
 }
