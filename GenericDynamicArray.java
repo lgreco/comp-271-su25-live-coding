@@ -36,16 +36,6 @@ public class GenericDynamicArray<E extends Comparable<E>> implements Comparable<
     } // method getOccupancy
 
     /**
-     * Helper method that ensures the underlying array has always room for
-     * additional elements.
-     */
-    private void ensureSpace() {
-        if (this.occupancy == this.underlying.length) {
-            this.resize();
-        }
-    } // method ensureSpace
-
-    /**
      * Resize the underlying array as needed.
      */
     @SuppressWarnings("unchecked")
@@ -58,40 +48,14 @@ public class GenericDynamicArray<E extends Comparable<E>> implements Comparable<
         this.underlying = temp;
     } // method resize
 
-    /**
-     * Helper method to place an element at a specified position and increement the
-     * occupancy of the underlying data structure. The method performs no safety
-     * checkd and simply overwrites the assigned position. It is assumed that any
-     * necessary checks to make sure the position can be overwritten has bene done
-     * by the calling method.
-     */
-    private void placeItem(E e, int position) {
-        this.underlying[position] = e;
-        this.occupancy++;
-    } // method placeItem
-
-    /**
-     * Method to shift everying after a specified position in the underlying array,
-     * one place to the right. The method performs no check to ensure that array
-     * indices are within bounds. It assumes that the calling method has made the
-     * necessary checks. This is important because the loop in this method starts
-     * from position [this.occupancy] in the underlying array. When the underlying
-     * array is full, the reference [this.occupancy] is an out-of-bounds index. The
-     * array, in such cases, must be resized first. This is the responsibility of
-     * the calling function.
-     * 
-     * @param index
-     */
-    private void shiftRight(int index) {
-        for (int i = this.occupancy; i >= index; i--) {
-            this.underlying[i] = this.underlying[i - 1];
-        }
-    } // method shiftRight
-
     /** Ands an element to the next available position in the underlying array. */
     public void add(E e) {
-        this.ensureSpace();
-        this.placeItem(e, this.occupancy);
+
+        if (this.occupancy == this.underlying.length) {
+            this.resize();
+        }
+        this.underlying[this.occupancy] = e;
+        this.occupancy++;
     } // method add
 
     /**
@@ -104,9 +68,17 @@ public class GenericDynamicArray<E extends Comparable<E>> implements Comparable<
     public void add(E e, int index) {
         // Guard statement
         if (index >= 0 && index < this.occupancy) {
-            this.ensureSpace();
-            this.shiftRight(index);
-            this.placeItem(e, index);
+            // Make sure there is room for one more element or resize
+            if (this.occupancy == this.underlying.length) {
+                this.resize();
+            }
+            // Shift items to the right
+            for (int i = this.occupancy; i >= index; i--) {
+                this.underlying[i] = this.underlying[i - 1];
+            }
+            // Place at specified position
+            this.underlying[index] = e;
+            this.occupancy++;
         }
     } // method add
 

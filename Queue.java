@@ -1,4 +1,4 @@
-public class Queue<E extends Comparable<E>> extends GenericDynamicArray<E> implements Xifo<E>, Fifo<E> {
+public class Queue<E extends Comparable<E>> extends nfs_GenericDynamicArray<E> implements Xifo<E>, Fifo<E> {
 
     public void push(E e) {
     }

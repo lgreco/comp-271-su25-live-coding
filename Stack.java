@@ -1,4 +1,4 @@
-public class Stack<E extends Comparable<E>> extends GenericDynamicArray<E> implements Xifo<E>, Lifo<E> {
+public class Stack<E extends Comparable<E>> extends nfs_GenericDynamicArray<E> implements Xifo<E>, Lifo<E> {
 
     public int compareTo(Stack<E> other) {
         return this.getOccupancy()-other.getOccupancy();
