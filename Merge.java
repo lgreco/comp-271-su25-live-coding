@@ -37,4 +37,33 @@ public class Merge {
         }
         return C;
     } // method merge
+
+    /** Assume input array length = 2^p */
+    static int[] mergeSort(int[] array) {
+        int[] result;
+        if (array.length == 1) {
+            result = new int[1];
+            result[0] = array[0];
+        } else {
+            // need to split input array in halves
+            int mid = array.length / 2;
+            // create the new left/right halves
+            int[] left = new int[mid];
+            int[] right = new int[mid];
+            // populate left half
+            for (int i = 0; i < mid; i++) {
+                left[i] = array[i];
+            }
+            // populate right half
+            for (int i = mid; i < array.length; i++) {
+                right[i] = array[i];
+            }
+            // Now we have our halves
+            int[] sortedLeft = mergeSort(left);
+            int[] sortedRight = mergeSort(right);
+
+            result = merge(sortedLeft, sortedRight);
+        }
+        return result;
+    }
 }
