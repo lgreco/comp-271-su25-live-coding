@@ -56,7 +56,7 @@ public class Merge {
             }
             // populate right half
             for (int i = mid; i < array.length; i++) {
-                right[i] = array[i];
+                right[i-mid] = array[i];
             }
             // Now we have our halves
             int[] sortedLeft = mergeSort(left);
