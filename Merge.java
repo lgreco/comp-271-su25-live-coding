@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Merge {
 
     /**
@@ -41,10 +43,13 @@ public class Merge {
     /** Assume input array length = 2^p */
     static int[] mergeSort(int[] array) {
         int[] result;
+        System.out.printf("\n\nReceived array %s", Arrays.toString(array));
         if (array.length == 1) {
+            System.out.printf("\n\tArray has length 1; return as is");
             result = new int[1];
             result[0] = array[0];
         } else {
+            System.out.printf("\n\tArray must be split in halves.");
             // need to split input array in halves
             int mid = array.length / 2;
             // create the new left/right halves
@@ -58,12 +63,26 @@ public class Merge {
             for (int i = mid; i < array.length; i++) {
                 right[i - mid] = array[i];
             }
+            System.out.printf("\n\tLeft half is %s", Arrays.toString(left));
+            System.out.printf("\n\tRight half is %s", Arrays.toString(right));
+            System.out.printf("\n\tPassing halves back to this method.\n");
             // Now we have our halves
             int[] sortedLeft = mergeSort(left);
             int[] sortedRight = mergeSort(right);
-
+            System.out.printf("\n\tAbout to merge %s and %s",
+                    Arrays.toString(sortedLeft), Arrays.toString(sortedRight));
             result = merge(sortedLeft, sortedRight);
         }
+        System.out.printf("\nMethod is returning %s",
+                Arrays.toString(result));
         return result;
+    } // method mergeSort
+
+    public static void main(String[] args) {
+        int[] test = { 4,3,2,6};
+        int[] sortedTest = mergeSort(test);
+        System.out.println();
+        System.out.println();
+        System.out.println(Arrays.toString(sortedTest));
     }
 }
