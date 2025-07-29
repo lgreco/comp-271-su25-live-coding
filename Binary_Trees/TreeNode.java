@@ -14,4 +14,6 @@ public class TreeNode  {
         this.left = null;
         this.right = null;
     }
+
+    public String toString() { return this.value;}
 }
