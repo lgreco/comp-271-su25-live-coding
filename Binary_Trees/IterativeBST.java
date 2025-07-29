@@ -26,13 +26,14 @@ public class IterativeBST {
                 } else if (newNode.value.compareTo(cursor.value) > 0) {
                     cursor = cursor.right; // go right
                 } else {
-                    duplicate = ! duplicate;
+                    duplicate = !duplicate;
                 }
             }
-            // At this point, in not duplicate cursor has found a null
+            // At this point, if not duplicate, cursor has found a null
             // child that belongs to node parent
             if (!duplicate) {
-                // For sure the new node will go under parent
+                // For sure the new node will go under parent but we need to find first if it's
+                // the left or the right child.
                 if (newNode.value.compareTo(parent.value) < 0) {
                     parent.left = newNode;
                 } else {
@@ -40,6 +41,6 @@ public class IterativeBST {
                 }
             }
         }
-    }
+    } // method insert
 
-}
+} // class IterativeBST
