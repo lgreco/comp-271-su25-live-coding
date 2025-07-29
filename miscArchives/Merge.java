@@ -1,3 +1,4 @@
+package miscArchives;
 import java.util.Arrays;
 
 public class Merge {

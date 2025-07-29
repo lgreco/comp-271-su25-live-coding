@@ -1,3 +1,4 @@
+package miscArchives;
 public class JUL07 {
 
     static final int ASCII_A = (int) 'A';

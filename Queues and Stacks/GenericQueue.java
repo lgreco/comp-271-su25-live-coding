@@ -1,4 +1,4 @@
-public class GenericQueue<E extends Comparable<E>> extends nfs_GenericDynamicArray<E> implements Xifo<E>, Fifo<E> {
+public class GenericQueue<E extends Comparable<E>> extends alt_GenericDynamicArray<E> implements Xifo<E>, Fifo<E> {
     //             ========================
     //             This means that only objects
     //             with compareTo method in them
